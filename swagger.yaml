@@ -1,0 +1,1476 @@
+openapi: 3.0.3
+info:
+  title: TheHTTP
+  description: >-
+
+    The **TheHTTP** project is an innovative 🚀 and community-driven 🔭 initiative aimed at providing developers with free and accessible APIs for their projects.
+
+    The project focuses on delivering a wide range of APIs that cater to various domains and functionalities, enabling developers to seamlessly integrate these APIs into their applications.
+
+    Key highlights of the FreeAPI project include:
+
+    1. **🧤 Accessibility:** The FreeAPI project is committed to eliminating barriers by providing free access to its collection of APIs.  
+        Developers can leverage these APIs without any cost limitations, allowing them to experiment, learn, and build innovative applications.
+
+    2. **🔩 Diverse API Collection:** The project offers a diverse and comprehensive collection of APIs that span across different industries, domains, and functionalities.  
+        Whether you require social media integrations, payment gateways, machine learning algorithms, or IoT device connectivity, the FreeAPI project has you covered.
+
+    3. **🔌 Simplified Integration:** The FreeAPI project understands the challenges developers face when integrating APIs into their applications. To address this, the project provides clear documentation, code samples, and SDKs, simplifying the integration process and reducing development time and effort.
+
+    4. **🤝 Community-Driven Development:** The project fosters a vibrant and collaborative community of developers. Contributors are encouraged to share their knowledge, engage in discussions, and collaborate on API-related projects. This collective effort ensures the continuous improvement and reliability of the APIs offered by the FreeAPI project.
+
+    5. **🎼 Learning and Skill Development:** The FreeAPI project aims to empower developers by providing a platform for learning and skill development. Through access to various APIs and educational resources, developers can enhance their understanding of API integration, expand their knowledge, and showcase their expertise through building complete projects.
+        
+
+    Overall, the **FreeAPI** project is a valuable resource for developers seeking accessible and diverse APIs.
+
+    By fostering a supportive community, the project empowers developers to learn, create, and innovate, ultimately contributing to the growth and advancement of the API integration landscape.
+
+    ## 🏁 Installation
+
+    Follow [these](https://github.com/hiteshchoudhary/apihub#-installation) instructions for the installation and project setup.
+
+    ## 🐞 Reporting issues
+
+    If you find API issues or bugs when testing, please create an [issue](https://github.com/hiteshchoudhary/apihub/issues/new) and assign it to a member of the development team.
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: 'http://localhost:8080/api/v1'
+paths:
+  /public/randomusers:
+    get:
+      tags:
+        - 📢 Public APIs
+
+      summary: Get users
+      description: >-
+        The API endpoint retrieves a random list of users. When accessing this
+        endpoint, you will receive a response containing a randomly generated
+        list of users.
+
+
+        This functionality is useful for scenarios such as testing, demo data
+        generation, or populating user interfaces with dummy data.
+
+
+        It provides a convenient way to obtain randomized user information for
+        various purposes within your application.
+      operationId: getUsers
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: string
+            example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: string
+            example: '10'
+      responses:
+        '200':
+          description: Get random users
+          headers:
+            Access-Control-Allow-Credentials:
+              schema:
+                type: string
+                example: 'true'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '10757'
+            Date:
+              schema:
+                type: string
+                example: Thu, 01 Jun 2023 05:44:13 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2a05-xjkqHU4sNAeFPZX9uGNel7XPn8E"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      currentPageItems:
+                        type: number
+                        example: 10
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            cell:
+                              type: string
+                              example: (029)-082-3612
+                            dob:
+                              type: object
+                              properties:
+                                age:
+                                  type: number
+                                  example: 54
+                                date:
+                                  type: string
+                                  example: '1968-07-21T10:02:51.768Z'
+                            email:
+                              type: string
+                              example: joseph.evans@example.com
+                            gender:
+                              type: string
+                              example: male
+                            id:
+                              type: number
+                              example: 1
+                            location:
+                              type: object
+                              properties:
+                                city:
+                                  type: string
+                                  example: Hastings
+                                coordinates:
+                                  type: object
+                                  properties:
+                                    latitude:
+                                      type: string
+                                      example: '51.9039'
+                                    longitude:
+                                      type: string
+                                      example: '-45.2357'
+                                country:
+                                  type: string
+                                  example: New Zealand
+                                postcode:
+                                  example: 92298
+                                  anyOf:
+                                    - type: number
+                                      example: 92298
+                                    - type: string
+                                      example: 3305 DO
+                                    - type: number
+                                      example: 1138
+                                    - type: number
+                                      example: 20318
+                                    - type: number
+                                      example: 7746
+                                    - type: number
+                                      example: 22060
+                                    - type: number
+                                      example: 30399
+                                    - type: number
+                                      example: 86893
+                                state:
+                                  type: string
+                                  example: Otago
+                                street:
+                                  type: object
+                                  properties:
+                                    name:
+                                      type: string
+                                      example: Lunn Avenue
+                                    number:
+                                      type: number
+                                      example: 61
+                                timezone:
+                                  type: object
+                                  properties:
+                                    description:
+                                      type: string
+                                      example: Central Time (US & Canada), Mexico City
+                                    offset:
+                                      type: string
+                                      example: '-6:00'
+                            login:
+                              type: object
+                              properties:
+                                md5:
+                                  type: string
+                                  example: 2cc09194861ea12e8e842cdce5749230
+                                password:
+                                  type: string
+                                  example: otis
+                                salt:
+                                  type: string
+                                  example: WiHweSpK
+                                sha1:
+                                  type: string
+                                  example: aa808f8a4f03df53a427905ae690c677b2d68895
+                                sha256:
+                                  type: string
+                                  example: >-
+                                    c857e62a617c9015a05b9ecc7f63e05c90042bd79514ca49bacfdf7e97b482d8
+                                username:
+                                  type: string
+                                  example: angryzebra337
+                                uuid:
+                                  type: string
+                                  example: 9230749e-c285-41b4-9a0f-46dab2454b4e
+                            name:
+                              type: object
+                              properties:
+                                first:
+                                  type: string
+                                  example: Joseph
+                                last:
+                                  type: string
+                                  example: Evans
+                                title:
+                                  type: string
+                                  example: Mr
+                            nat:
+                              type: string
+                              example: NZ
+                            phone:
+                              type: string
+                              example: (612)-327-2806
+                            picture:
+                              type: object
+                              properties:
+                                large:
+                                  type: string
+                                  example: >-
+                                    https://randomuser.me/api/portraits/men/65.jpg
+                                medium:
+                                  type: string
+                                  example: >-
+                                    https://randomuser.me/api/portraits/med/men/65.jpg
+                                thumbnail:
+                                  type: string
+                                  example: >-
+                                    https://randomuser.me/api/portraits/thumb/men/65.jpg
+                            registered:
+                              type: object
+                              properties:
+                                age:
+                                  type: number
+                                  example: 4
+                                date:
+                                  type: string
+                                  example: '2019-01-31T10:09:35.816Z'
+                        example:
+                          - cell: (029)-082-3612
+                            dob:
+                              age: 54
+                              date: '1968-07-21T10:02:51.768Z'
+                            email: joseph.evans@example.com
+                            gender: male
+                            id: 1
+                            location:
+                              city: Hastings
+                              coordinates:
+                                latitude: '51.9039'
+                                longitude: '-45.2357'
+                              country: New Zealand
+                              postcode: 92298
+                              state: Otago
+                              street:
+                                name: Lunn Avenue
+                                number: 61
+                              timezone:
+                                description: Central Time (US & Canada), Mexico City
+                                offset: '-6:00'
+                            login:
+                              md5: 2cc09194861ea12e8e842cdce5749230
+                              password: otis
+                              salt: WiHweSpK
+                              sha1: aa808f8a4f03df53a427905ae690c677b2d68895
+                              sha256: >-
+                                c857e62a617c9015a05b9ecc7f63e05c90042bd79514ca49bacfdf7e97b482d8
+                              username: angryzebra337
+                              uuid: 9230749e-c285-41b4-9a0f-46dab2454b4e
+                            name:
+                              first: Joseph
+                              last: Evans
+                              title: Mr
+                            nat: NZ
+                            phone: (612)-327-2806
+                            picture:
+                              large: https://randomuser.me/api/portraits/men/65.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/men/65.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/men/65.jpg
+                            registered:
+                              age: 4
+                              date: '2019-01-31T10:09:35.816Z'
+                          - cell: '8993504716'
+                            dob:
+                              age: 32
+                              date: '1990-10-29T13:51:49.805Z'
+                            email: hetal.bharanya@example.com
+                            gender: female
+                            id: 2
+                            location:
+                              city: Howrah
+                              coordinates:
+                                latitude: '-89.7659'
+                                longitude: '49.5620'
+                              country: India
+                              postcode: 12054
+                              state: Madhya Pradesh
+                              street:
+                                name: Gali Paranthe Wali
+                                number: 234
+                              timezone:
+                                description: Kabul
+                                offset: '+4:30'
+                            login:
+                              md5: fa9549419b5ac6ca748d0513ec625553
+                              password: insanity
+                              salt: rYfUWfpZ
+                              sha1: b7f374368f6d8be2f9880037b5bf6c3c76c1db2e
+                              sha256: >-
+                                5c61e253e05d64a713020566d872b07890d74f347c430974c7e86897bf6ed781
+                              username: happygoose680
+                              uuid: 03e1e369-138c-442b-a046-904d1cc13d76
+                            name:
+                              first: Hetal
+                              last: Bharanya
+                              title: Ms
+                            nat: IN
+                            phone: '7517215828'
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/47.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/47.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/47.jpg
+                            registered:
+                              age: 16
+                              date: '2007-04-04T09:22:55.620Z'
+                          - cell: 064-2952-510
+                            dob:
+                              age: 63
+                              date: '1960-01-02T04:11:38.488Z'
+                            email: tanja.spanovic@example.com
+                            gender: female
+                            id: 3
+                            location:
+                              city: Lebane
+                              coordinates:
+                                latitude: '-26.3541'
+                                longitude: '52.2337'
+                              country: Serbia
+                              postcode: 88087
+                              state: Prizren
+                              street:
+                                name: Vojvode Mišića
+                                number: 1663
+                              timezone:
+                                description: Central Time (US & Canada), Mexico City
+                                offset: '-6:00'
+                            login:
+                              md5: ec60e7838514036315af596a3f465c3c
+                              password: calgary
+                              salt: giy1GclZ
+                              sha1: dd79140034db5b5fa55896f3a7dee55d3b3b384d
+                              sha256: >-
+                                42fdb899d4443d01815fb27c146223c2ad9ce9ad12fc488015c5cadd52881104
+                              username: greentiger564
+                              uuid: d37482c4-28c3-4d6e-b591-6c1a7059defc
+                            name:
+                              first: Tanja
+                              last: Španović
+                              title: Mrs
+                            nat: RS
+                            phone: 039-7503-456
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/96.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/96.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/96.jpg
+                            registered:
+                              age: 4
+                              date: '2018-06-15T09:02:58.581Z'
+                          - cell: (06) 13040738
+                            dob:
+                              age: 59
+                              date: '1963-10-03T14:59:37.860Z'
+                            email: yori.knot@example.com
+                            gender: female
+                            id: 4
+                            location:
+                              city: Winterswijk Henxel
+                              coordinates:
+                                latitude: '-39.0490'
+                                longitude: '88.6245'
+                              country: Netherlands
+                              postcode: 3305 DO
+                              state: Utrecht
+                              street:
+                                name: Kastordreef
+                                number: 1243
+                              timezone:
+                                description: Newfoundland
+                                offset: '-3:30'
+                            login:
+                              md5: 48ecff0ad189ec56cc77cf08b95f6de8
+                              password: ilikeit
+                              salt: zmeTOy1q
+                              sha1: ebae70d28b5cf4c2164dcf32f1dc33cf0c4e2f21
+                              sha256: >-
+                                9af6004f46f05b9317bd780f18eb409fb22186f587850b48a62b7c12e45f0730
+                              username: purpledog668
+                              uuid: a2dadb83-2e6a-4d12-ad80-2d35e84cfbfb
+                            name:
+                              first: Yori
+                              last: Knot
+                              title: Ms
+                            nat: NL
+                            phone: (096) 2598476
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/43.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/43.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/43.jpg
+                            registered:
+                              age: 16
+                              date: '2007-05-08T12:35:56.245Z'
+                          - cell: 076 657 23 84
+                            dob:
+                              age: 53
+                              date: '1970-04-26T10:23:24.025Z'
+                            email: cacilia.lemoine@example.com
+                            gender: female
+                            id: 5
+                            location:
+                              city: Erlinsbach (Ag)
+                              coordinates:
+                                latitude: '0.3904'
+                                longitude: '-150.1322'
+                              country: Switzerland
+                              postcode: 1138
+                              state: Schwyz
+                              street:
+                                name: Montée du Chemin-Neuf
+                                number: 3778
+                              timezone:
+                                description: Mountain Time (US & Canada)
+                                offset: '-7:00'
+                            login:
+                              md5: 180077a1ef8cc1e9cf42860f645b3b2f
+                              password: bigtime
+                              salt: RcUosVOt
+                              sha1: 5269d29ebc80c8d73fe7a6383e838b054a760b51
+                              sha256: >-
+                                1a4381f6625bb368ffa08ada211f7848acce2e2a418361899d8f91bd69578139
+                              username: beautifulrabbit185
+                              uuid: 569974f9-4921-4c5a-8031-f7bff6f41efc
+                            name:
+                              first: Cäcilia
+                              last: Lemoine
+                              title: Madame
+                            nat: CH
+                            phone: 076 011 82 88
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/42.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/42.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/42.jpg
+                            registered:
+                              age: 2
+                              date: '2020-07-15T11:41:59.706Z'
+                          - cell: '9376723605'
+                            dob:
+                              age: 44
+                              date: '1978-10-01T00:33:31.775Z'
+                            email: nandita.uchil@example.com
+                            gender: female
+                            id: 6
+                            location:
+                              city: Kozhikode
+                              coordinates:
+                                latitude: '-21.4486'
+                                longitude: '-29.1084'
+                              country: India
+                              postcode: 20318
+                              state: Tripura
+                              street:
+                                name: NAD X Rd
+                                number: 6826
+                              timezone:
+                                description: Kathmandu
+                                offset: '+5:45'
+                            login:
+                              md5: cb8ba0dba2c270e548fd9dc4fc00612b
+                              password: soccer10
+                              salt: El6b1cU3
+                              sha1: fe9e3df57d56931472e2ead3e2ba0989660f4805
+                              sha256: >-
+                                210321ab09bb38896ee7a616ba3a8fa0e0dd3f7cbcf93f185bdcc3715b842d4e
+                              username: goldenostrich181
+                              uuid: 31ba6d47-92a5-447f-a48f-c7bab21a219c
+                            name:
+                              first: Nandita
+                              last: Uchil
+                              title: Mrs
+                            nat: IN
+                            phone: '9450586544'
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/82.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/82.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/82.jpg
+                            registered:
+                              age: 5
+                              date: '2018-03-16T16:46:33.627Z'
+                          - cell: 0466-518-535
+                            dob:
+                              age: 33
+                              date: '1989-11-13T19:26:57.752Z'
+                            email: terri.clark@example.com
+                            gender: female
+                            id: 7
+                            location:
+                              city: Mildura
+                              coordinates:
+                                latitude: '-40.3788'
+                                longitude: '-164.7382'
+                              country: Australia
+                              postcode: 7746
+                              state: New South Wales
+                              street:
+                                name: College St
+                                number: 3585
+                              timezone:
+                                description: >-
+                                  Western Europe Time, London, Lisbon,
+                                  Casablanca
+                                offset: '0:00'
+                            login:
+                              md5: 2ebf82771d7ce990ad469ff4e9e80a27
+                              password: elway7
+                              salt: gvoc7xk4
+                              sha1: f52933723cdaea82f9bffd11134a86ca2872036f
+                              sha256: >-
+                                6b3dafbf3e244aa21f56fc59f631c7d7edd88189719089158df4e5d8775e329f
+                              username: smallladybug901
+                              uuid: 25070c5d-4f32-4a60-8640-828282943624
+                            name:
+                              first: Terri
+                              last: Clark
+                              title: Miss
+                            nat: AU
+                            phone: 07-1746-8000
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/59.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/59.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/59.jpg
+                            registered:
+                              age: 1
+                              date: '2021-08-02T19:56:17.949Z'
+                          - cell: (097) H03-7594
+                            dob:
+                              age: 41
+                              date: '1981-07-13T07:30:31.046Z'
+                            email: dibach.gocko@example.com
+                            gender: male
+                            id: 8
+                            location:
+                              city: Popasna
+                              coordinates:
+                                latitude: '23.5401'
+                                longitude: '106.1507'
+                              country: Ukraine
+                              postcode: 22060
+                              state: Poltavska
+                              street:
+                                name: Ivana Pulyuya
+                                number: 1883
+                              timezone:
+                                description: Ekaterinburg, Islamabad, Karachi, Tashkent
+                                offset: '+5:00'
+                            login:
+                              md5: 478264ccf64d1fbf414c4c10fd9345fc
+                              password: wowwow
+                              salt: jlHUGO4a
+                              sha1: d9dc663a737b747137f56d76e4614b25a760c123
+                              sha256: >-
+                                fce19f3106a0360176cfc8863e7bd22c8384867acbe1f7a21b93d4b07364e291
+                              username: heavysnake675
+                              uuid: b0c34ca5-20c1-47e6-b040-12d3de4a8b45
+                            name:
+                              first: Dibach
+                              last: Gocko
+                              title: Mr
+                            nat: UA
+                            phone: (096) Q51-1466
+                            picture:
+                              large: https://randomuser.me/api/portraits/men/97.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/men/97.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/men/97.jpg
+                            registered:
+                              age: 2
+                              date: '2020-06-15T06:00:13.939Z'
+                          - cell: 663-396-994
+                            dob:
+                              age: 34
+                              date: '1988-10-18T10:40:46.976Z'
+                            email: virginia.dominguez@example.com
+                            gender: female
+                            id: 9
+                            location:
+                              city: Santa Cruz de Tenerife
+                              coordinates:
+                                latitude: '68.0499'
+                                longitude: '-9.1692'
+                              country: Spain
+                              postcode: 30399
+                              state: Asturias
+                              street:
+                                name: Avenida de Andalucía
+                                number: 3813
+                              timezone:
+                                description: >-
+                                  Western Europe Time, London, Lisbon,
+                                  Casablanca
+                                offset: '0:00'
+                            login:
+                              md5: d2dd087741f12a7dbef36df5e3294846
+                              password: lander
+                              salt: wdlOyzev
+                              sha1: 9d899ba14206c645557261b14572c9cdc13fcd1c
+                              sha256: >-
+                                6d9cfd544a26c1bbb02903f0e0503da2242ada312abe31b62cd70393e5ff5643
+                              username: tinymeercat592
+                              uuid: 63b2e547-b188-47f7-8a98-e173e0d0ced5
+                            name:
+                              first: Virginia
+                              last: Domínguez
+                              title: Ms
+                            nat: ES
+                            phone: 950-457-280
+                            picture:
+                              large: https://randomuser.me/api/portraits/women/60.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/women/60.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/women/60.jpg
+                            registered:
+                              age: 4
+                              date: '2018-10-07T16:11:51.787Z'
+                          - cell: 0955-789-0778
+                            dob:
+                              age: 63
+                              date: '1960-04-09T12:58:36.692Z'
+                            email: ard.khwty@example.com
+                            gender: male
+                            id: 10
+                            location:
+                              city: نیشابور
+                              coordinates:
+                                latitude: '30.4677'
+                                longitude: '-147.4363'
+                              country: Iran
+                              postcode: 86893
+                              state: کردستان
+                              street:
+                                name: میدان استقلال
+                                number: 6607
+                              timezone:
+                                description: Central Time (US & Canada), Mexico City
+                                offset: '-6:00'
+                            login:
+                              md5: 57a78bf79f14747d8e4e4bfc8b88421c
+                              password: lucky
+                              salt: 7YOJGqxC
+                              sha1: 0d1d7a5e577a6ad2f24e6197fdff5406561b485c
+                              sha256: >-
+                                dac7bc7fcf5c3fc7fae006ae8a318908515c45d4dfd315063e1d406a96337f91
+                              username: goldendog820
+                              uuid: 9cdb7909-ca96-46c5-89c4-5909db33c1d0
+                            name:
+                              first: آراد
+                              last: کوتی
+                              title: Mr
+                            nat: IR
+                            phone: 040-18679426
+                            picture:
+                              large: https://randomuser.me/api/portraits/men/28.jpg
+                              medium: >-
+                                https://randomuser.me/api/portraits/med/men/28.jpg
+                              thumbnail: >-
+                                https://randomuser.me/api/portraits/thumb/men/28.jpg
+                            registered:
+                              age: 6
+                              date: '2016-11-19T20:27:01.344Z'
+                      limit:
+                        type: number
+                        example: 10
+                      nextPage:
+                        type: boolean
+                        example: true
+                      page:
+                        type: number
+                        example: 1
+                      previousPage:
+                        type: boolean
+                        example: false
+                      totalItems:
+                        type: number
+                        example: 500
+                      totalPages:
+                        type: number
+                        example: 50
+                  message:
+                    type: string
+                    example: Random users fetched successfully
+                  statusCode:
+                    type: number
+                    example: 200
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Get random users:
+                  value:
+                    data:
+                      currentPageItems: 10
+                      data:
+                        - cell: (029)-082-3612
+                          dob:
+                            age: 54
+                            date: '1968-07-21T10:02:51.768Z'
+                          email: joseph.evans@example.com
+                          gender: male
+                          id: 1
+                          location:
+                            city: Hastings
+                            coordinates:
+                              latitude: '51.9039'
+                              longitude: '-45.2357'
+                            country: New Zealand
+                            postcode: 92298
+                            state: Otago
+                            street:
+                              name: Lunn Avenue
+                              number: 61
+                            timezone:
+                              description: Central Time (US & Canada), Mexico City
+                              offset: '-6:00'
+                          login:
+                            md5: 2cc09194861ea12e8e842cdce5749230
+                            password: otis
+                            salt: WiHweSpK
+                            sha1: aa808f8a4f03df53a427905ae690c677b2d68895
+                            sha256: >-
+                              c857e62a617c9015a05b9ecc7f63e05c90042bd79514ca49bacfdf7e97b482d8
+                            username: angryzebra337
+                            uuid: 9230749e-c285-41b4-9a0f-46dab2454b4e
+                          name:
+                            first: Joseph
+                            last: Evans
+                            title: Mr
+                          nat: NZ
+                          phone: (612)-327-2806
+                          picture:
+                            large: https://randomuser.me/api/portraits/men/65.jpg
+                            medium: https://randomuser.me/api/portraits/med/men/65.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/men/65.jpg
+                          registered:
+                            age: 4
+                            date: '2019-01-31T10:09:35.816Z'
+                        - cell: '8993504716'
+                          dob:
+                            age: 32
+                            date: '1990-10-29T13:51:49.805Z'
+                          email: hetal.bharanya@example.com
+                          gender: female
+                          id: 2
+                          location:
+                            city: Howrah
+                            coordinates:
+                              latitude: '-89.7659'
+                              longitude: '49.5620'
+                            country: India
+                            postcode: 12054
+                            state: Madhya Pradesh
+                            street:
+                              name: Gali Paranthe Wali
+                              number: 234
+                            timezone:
+                              description: Kabul
+                              offset: '+4:30'
+                          login:
+                            md5: fa9549419b5ac6ca748d0513ec625553
+                            password: insanity
+                            salt: rYfUWfpZ
+                            sha1: b7f374368f6d8be2f9880037b5bf6c3c76c1db2e
+                            sha256: >-
+                              5c61e253e05d64a713020566d872b07890d74f347c430974c7e86897bf6ed781
+                            username: happygoose680
+                            uuid: 03e1e369-138c-442b-a046-904d1cc13d76
+                          name:
+                            first: Hetal
+                            last: Bharanya
+                            title: Ms
+                          nat: IN
+                          phone: '7517215828'
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/47.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/47.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/47.jpg
+                          registered:
+                            age: 16
+                            date: '2007-04-04T09:22:55.620Z'
+                        - cell: 064-2952-510
+                          dob:
+                            age: 63
+                            date: '1960-01-02T04:11:38.488Z'
+                          email: tanja.spanovic@example.com
+                          gender: female
+                          id: 3
+                          location:
+                            city: Lebane
+                            coordinates:
+                              latitude: '-26.3541'
+                              longitude: '52.2337'
+                            country: Serbia
+                            postcode: 88087
+                            state: Prizren
+                            street:
+                              name: Vojvode Mišića
+                              number: 1663
+                            timezone:
+                              description: Central Time (US & Canada), Mexico City
+                              offset: '-6:00'
+                          login:
+                            md5: ec60e7838514036315af596a3f465c3c
+                            password: calgary
+                            salt: giy1GclZ
+                            sha1: dd79140034db5b5fa55896f3a7dee55d3b3b384d
+                            sha256: >-
+                              42fdb899d4443d01815fb27c146223c2ad9ce9ad12fc488015c5cadd52881104
+                            username: greentiger564
+                            uuid: d37482c4-28c3-4d6e-b591-6c1a7059defc
+                          name:
+                            first: Tanja
+                            last: Španović
+                            title: Mrs
+                          nat: RS
+                          phone: 039-7503-456
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/96.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/96.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/96.jpg
+                          registered:
+                            age: 4
+                            date: '2018-06-15T09:02:58.581Z'
+                        - cell: (06) 13040738
+                          dob:
+                            age: 59
+                            date: '1963-10-03T14:59:37.860Z'
+                          email: yori.knot@example.com
+                          gender: female
+                          id: 4
+                          location:
+                            city: Winterswijk Henxel
+                            coordinates:
+                              latitude: '-39.0490'
+                              longitude: '88.6245'
+                            country: Netherlands
+                            postcode: 3305 DO
+                            state: Utrecht
+                            street:
+                              name: Kastordreef
+                              number: 1243
+                            timezone:
+                              description: Newfoundland
+                              offset: '-3:30'
+                          login:
+                            md5: 48ecff0ad189ec56cc77cf08b95f6de8
+                            password: ilikeit
+                            salt: zmeTOy1q
+                            sha1: ebae70d28b5cf4c2164dcf32f1dc33cf0c4e2f21
+                            sha256: >-
+                              9af6004f46f05b9317bd780f18eb409fb22186f587850b48a62b7c12e45f0730
+                            username: purpledog668
+                            uuid: a2dadb83-2e6a-4d12-ad80-2d35e84cfbfb
+                          name:
+                            first: Yori
+                            last: Knot
+                            title: Ms
+                          nat: NL
+                          phone: (096) 2598476
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/43.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/43.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/43.jpg
+                          registered:
+                            age: 16
+                            date: '2007-05-08T12:35:56.245Z'
+                        - cell: 076 657 23 84
+                          dob:
+                            age: 53
+                            date: '1970-04-26T10:23:24.025Z'
+                          email: cacilia.lemoine@example.com
+                          gender: female
+                          id: 5
+                          location:
+                            city: Erlinsbach (Ag)
+                            coordinates:
+                              latitude: '0.3904'
+                              longitude: '-150.1322'
+                            country: Switzerland
+                            postcode: 1138
+                            state: Schwyz
+                            street:
+                              name: Montée du Chemin-Neuf
+                              number: 3778
+                            timezone:
+                              description: Mountain Time (US & Canada)
+                              offset: '-7:00'
+                          login:
+                            md5: 180077a1ef8cc1e9cf42860f645b3b2f
+                            password: bigtime
+                            salt: RcUosVOt
+                            sha1: 5269d29ebc80c8d73fe7a6383e838b054a760b51
+                            sha256: >-
+                              1a4381f6625bb368ffa08ada211f7848acce2e2a418361899d8f91bd69578139
+                            username: beautifulrabbit185
+                            uuid: 569974f9-4921-4c5a-8031-f7bff6f41efc
+                          name:
+                            first: Cäcilia
+                            last: Lemoine
+                            title: Madame
+                          nat: CH
+                          phone: 076 011 82 88
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/42.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/42.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/42.jpg
+                          registered:
+                            age: 2
+                            date: '2020-07-15T11:41:59.706Z'
+                        - cell: '9376723605'
+                          dob:
+                            age: 44
+                            date: '1978-10-01T00:33:31.775Z'
+                          email: nandita.uchil@example.com
+                          gender: female
+                          id: 6
+                          location:
+                            city: Kozhikode
+                            coordinates:
+                              latitude: '-21.4486'
+                              longitude: '-29.1084'
+                            country: India
+                            postcode: 20318
+                            state: Tripura
+                            street:
+                              name: NAD X Rd
+                              number: 6826
+                            timezone:
+                              description: Kathmandu
+                              offset: '+5:45'
+                          login:
+                            md5: cb8ba0dba2c270e548fd9dc4fc00612b
+                            password: soccer10
+                            salt: El6b1cU3
+                            sha1: fe9e3df57d56931472e2ead3e2ba0989660f4805
+                            sha256: >-
+                              210321ab09bb38896ee7a616ba3a8fa0e0dd3f7cbcf93f185bdcc3715b842d4e
+                            username: goldenostrich181
+                            uuid: 31ba6d47-92a5-447f-a48f-c7bab21a219c
+                          name:
+                            first: Nandita
+                            last: Uchil
+                            title: Mrs
+                          nat: IN
+                          phone: '9450586544'
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/82.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/82.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/82.jpg
+                          registered:
+                            age: 5
+                            date: '2018-03-16T16:46:33.627Z'
+                        - cell: 0466-518-535
+                          dob:
+                            age: 33
+                            date: '1989-11-13T19:26:57.752Z'
+                          email: terri.clark@example.com
+                          gender: female
+                          id: 7
+                          location:
+                            city: Mildura
+                            coordinates:
+                              latitude: '-40.3788'
+                              longitude: '-164.7382'
+                            country: Australia
+                            postcode: 7746
+                            state: New South Wales
+                            street:
+                              name: College St
+                              number: 3585
+                            timezone:
+                              description: Western Europe Time, London, Lisbon, Casablanca
+                              offset: '0:00'
+                          login:
+                            md5: 2ebf82771d7ce990ad469ff4e9e80a27
+                            password: elway7
+                            salt: gvoc7xk4
+                            sha1: f52933723cdaea82f9bffd11134a86ca2872036f
+                            sha256: >-
+                              6b3dafbf3e244aa21f56fc59f631c7d7edd88189719089158df4e5d8775e329f
+                            username: smallladybug901
+                            uuid: 25070c5d-4f32-4a60-8640-828282943624
+                          name:
+                            first: Terri
+                            last: Clark
+                            title: Miss
+                          nat: AU
+                          phone: 07-1746-8000
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/59.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/59.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/59.jpg
+                          registered:
+                            age: 1
+                            date: '2021-08-02T19:56:17.949Z'
+                        - cell: (097) H03-7594
+                          dob:
+                            age: 41
+                            date: '1981-07-13T07:30:31.046Z'
+                          email: dibach.gocko@example.com
+                          gender: male
+                          id: 8
+                          location:
+                            city: Popasna
+                            coordinates:
+                              latitude: '23.5401'
+                              longitude: '106.1507'
+                            country: Ukraine
+                            postcode: 22060
+                            state: Poltavska
+                            street:
+                              name: Ivana Pulyuya
+                              number: 1883
+                            timezone:
+                              description: Ekaterinburg, Islamabad, Karachi, Tashkent
+                              offset: '+5:00'
+                          login:
+                            md5: 478264ccf64d1fbf414c4c10fd9345fc
+                            password: wowwow
+                            salt: jlHUGO4a
+                            sha1: d9dc663a737b747137f56d76e4614b25a760c123
+                            sha256: >-
+                              fce19f3106a0360176cfc8863e7bd22c8384867acbe1f7a21b93d4b07364e291
+                            username: heavysnake675
+                            uuid: b0c34ca5-20c1-47e6-b040-12d3de4a8b45
+                          name:
+                            first: Dibach
+                            last: Gocko
+                            title: Mr
+                          nat: UA
+                          phone: (096) Q51-1466
+                          picture:
+                            large: https://randomuser.me/api/portraits/men/97.jpg
+                            medium: https://randomuser.me/api/portraits/med/men/97.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/men/97.jpg
+                          registered:
+                            age: 2
+                            date: '2020-06-15T06:00:13.939Z'
+                        - cell: 663-396-994
+                          dob:
+                            age: 34
+                            date: '1988-10-18T10:40:46.976Z'
+                          email: virginia.dominguez@example.com
+                          gender: female
+                          id: 9
+                          location:
+                            city: Santa Cruz de Tenerife
+                            coordinates:
+                              latitude: '68.0499'
+                              longitude: '-9.1692'
+                            country: Spain
+                            postcode: 30399
+                            state: Asturias
+                            street:
+                              name: Avenida de Andalucía
+                              number: 3813
+                            timezone:
+                              description: Western Europe Time, London, Lisbon, Casablanca
+                              offset: '0:00'
+                          login:
+                            md5: d2dd087741f12a7dbef36df5e3294846
+                            password: lander
+                            salt: wdlOyzev
+                            sha1: 9d899ba14206c645557261b14572c9cdc13fcd1c
+                            sha256: >-
+                              6d9cfd544a26c1bbb02903f0e0503da2242ada312abe31b62cd70393e5ff5643
+                            username: tinymeercat592
+                            uuid: 63b2e547-b188-47f7-8a98-e173e0d0ced5
+                          name:
+                            first: Virginia
+                            last: Domínguez
+                            title: Ms
+                          nat: ES
+                          phone: 950-457-280
+                          picture:
+                            large: https://randomuser.me/api/portraits/women/60.jpg
+                            medium: >-
+                              https://randomuser.me/api/portraits/med/women/60.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/women/60.jpg
+                          registered:
+                            age: 4
+                            date: '2018-10-07T16:11:51.787Z'
+                        - cell: 0955-789-0778
+                          dob:
+                            age: 63
+                            date: '1960-04-09T12:58:36.692Z'
+                          email: ard.khwty@example.com
+                          gender: male
+                          id: 10
+                          location:
+                            city: نیشابور
+                            coordinates:
+                              latitude: '30.4677'
+                              longitude: '-147.4363'
+                            country: Iran
+                            postcode: 86893
+                            state: کردستان
+                            street:
+                              name: میدان استقلال
+                              number: 6607
+                            timezone:
+                              description: Central Time (US & Canada), Mexico City
+                              offset: '-6:00'
+                          login:
+                            md5: 57a78bf79f14747d8e4e4bfc8b88421c
+                            password: lucky
+                            salt: 7YOJGqxC
+                            sha1: 0d1d7a5e577a6ad2f24e6197fdff5406561b485c
+                            sha256: >-
+                              dac7bc7fcf5c3fc7fae006ae8a318908515c45d4dfd315063e1d406a96337f91
+                            username: goldendog820
+                            uuid: 9cdb7909-ca96-46c5-89c4-5909db33c1d0
+                          name:
+                            first: آراد
+                            last: کوتی
+                            title: Mr
+                          nat: IR
+                          phone: 040-18679426
+                          picture:
+                            large: https://randomuser.me/api/portraits/men/28.jpg
+                            medium: https://randomuser.me/api/portraits/med/men/28.jpg
+                            thumbnail: >-
+                              https://randomuser.me/api/portraits/thumb/men/28.jpg
+                          registered:
+                            age: 6
+                            date: '2016-11-19T20:27:01.344Z'
+                      limit: 10
+                      nextPage: true
+                      page: 1
+                      previousPage: false
+                      totalItems: 500
+                      totalPages: 50
+                    message: Random users fetched successfully
+                    statusCode: 200
+                    success: true
+  /public/randomusers/{userId}:
+    get:
+      tags:
+        - 📢 Public APIs
+
+      summary: Get user by id
+      description: >-
+        The API endpoint retrieves a user based on the specified ID.
+
+
+        When accessing this endpoint and providing a valid user ID as a
+        parameter, you will receive a response containing the details of the
+        user matching the provided ID.
+      operationId: getUserById
+      responses:
+        '200':
+          description: Get user by id
+          headers:
+            Access-Control-Allow-Credentials:
+              schema:
+                type: string
+                example: 'true'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '1126'
+            Date:
+              schema:
+                type: string
+                example: Thu, 01 Jun 2023 05:44:27 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"466-tNv1SNtB6cuxJH2yZW7lrDnlA34"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      cell:
+                        type: string
+                        example: (06) 55822509
+                      dob:
+                        type: object
+                        properties:
+                          age:
+                            type: number
+                            example: 46
+                          date:
+                            type: string
+                            example: '1977-02-08T09:03:59.520Z'
+                      email:
+                        type: string
+                        example: liron.roukema@example.com
+                      gender:
+                        type: string
+                        example: male
+                      id:
+                        type: number
+                        example: 13
+                      location:
+                        type: object
+                        properties:
+                          city:
+                            type: string
+                            example: Velp
+                          coordinates:
+                            type: object
+                            properties:
+                              latitude:
+                                type: string
+                                example: '-65.8793'
+                              longitude:
+                                type: string
+                                example: '-124.5931'
+                          country:
+                            type: string
+                            example: Netherlands
+                          postcode:
+                            type: string
+                            example: 1204 FM
+                          state:
+                            type: string
+                            example: Noord-Holland
+                          street:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: Geessinkbrink
+                              number:
+                                type: number
+                                example: 2643
+                          timezone:
+                            type: object
+                            properties:
+                              description:
+                                type: string
+                                example: Kaliningrad, South Africa
+                              offset:
+                                type: string
+                                example: '+2:00'
+                      login:
+                        type: object
+                        properties:
+                          md5:
+                            type: string
+                            example: 25d7d3c90507e1f0efe35cbdf1ab9aa9
+                          password:
+                            type: string
+                            example: kenwood
+                          salt:
+                            type: string
+                            example: oDN21BPS
+                          sha1:
+                            type: string
+                            example: 6f2113126a3f6b42fd3eaa02ec02dc09e11b867c
+                          sha256:
+                            type: string
+                            example: >-
+                              ed7cb9b0cdc995e1b25ae1c1e631c3f4fd9b02fff34e7d80c589019dcee4a1f9
+                          username:
+                            type: string
+                            example: bigleopard480
+                          uuid:
+                            type: string
+                            example: 28b8ae0f-7daa-4ef7-a912-6999416b8e65
+                      name:
+                        type: object
+                        properties:
+                          first:
+                            type: string
+                            example: Liron
+                          last:
+                            type: string
+                            example: Roukema
+                          title:
+                            type: string
+                            example: Mr
+                      nat:
+                        type: string
+                        example: NL
+                      phone:
+                        type: string
+                        example: (040) 4848820
+                      picture:
+                        type: object
+                        properties:
+                          large:
+                            type: string
+                            example: https://randomuser.me/api/portraits/men/72.jpg
+                          medium:
+                            type: string
+                            example: https://randomuser.me/api/portraits/med/men/72.jpg
+                          thumbnail:
+                            type: string
+                            example: >-
+                              https://randomuser.me/api/portraits/thumb/men/72.jpg
+                      registered:
+                        type: object
+                        properties:
+                          age:
+                            type: number
+                            example: 8
+                          date:
+                            type: string
+                            example: '2014-08-12T08:58:31.276Z'
+                  message:
+                    type: string
+                    example: User fetched successfully
+                  statusCode:
+                    type: number
+                    example: 200
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Get user by id:
+                  value:
+                    data:
+                      cell: (06) 55822509
+                      dob:
+                        age: 46
+                        date: '1977-02-08T09:03:59.520Z'
+                      email: liron.roukema@example.com
+                      gender: male
+                      id: 13
+                      location:
+                        city: Velp
+                        coordinates:
+                          latitude: '-65.8793'
+                          longitude: '-124.5931'
+                        country: Netherlands
+                        postcode: 1204 FM
+                        state: Noord-Holland
+                        street:
+                          name: Geessinkbrink
+                          number: 2643
+                        timezone:
+                          description: Kaliningrad, South Africa
+                          offset: '+2:00'
+                      login:
+                        md5: 25d7d3c90507e1f0efe35cbdf1ab9aa9
+                        password: kenwood
+                        salt: oDN21BPS
+                        sha1: 6f2113126a3f6b42fd3eaa02ec02dc09e11b867c
+                        sha256: >-
+                          ed7cb9b0cdc995e1b25ae1c1e631c3f4fd9b02fff34e7d80c589019dcee4a1f9
+                        username: bigleopard480
+                        uuid: 28b8ae0f-7daa-4ef7-a912-6999416b8e65
+                      name:
+                        first: Liron
+                        last: Roukema
+                        title: Mr
+                      nat: NL
+                      phone: (040) 4848820
+                      picture:
+                        large: https://randomuser.me/api/portraits/men/72.jpg
+                        medium: https://randomuser.me/api/portraits/med/men/72.jpg
+                        thumbnail: https://randomuser.me/api/portraits/thumb/men/72.jpg
+                      registered:
+                        age: 8
+                        date: '2014-08-12T08:58:31.276Z'
+                    message: User fetched successfully
+                    statusCode: 200
+                    success: true
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: '13'
+
+tags:
+  - name: 📢 Public APIs
+    description: >-
+      This section contains a collection of random public APIs, offering various
+      functionalities.
+  - name: 🚰 Kitchen Sink
+    description: >-
+      This section is a collection of essential backend development APIs.
+  - name: 🔐 Authentication
+    description: >-
+      This section encompasses all the APIs related to user authentication.

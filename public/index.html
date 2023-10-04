@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Socket Notification</title>
+  </head>
+  <body>
+    <h1>Notification</h1>
+
+    <button id="downloadBtn">Click Here to Download</button>
+
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script type="module">
+      import { io } from 'https://cdn.socket.io/4.4.1/socket.io.esm.min.js';
+      const downloadBtn = document.getElementById('downloadBtn');
+
+      const socket = io.connect('http://localhost:8080', {
+        path: '/socket.io',
+      });
+
+      socket.on('connect', () => {
+        console.log('connected', socket.id);
+      });
+
+      socket.on('messageFromServer', (data) => {
+        console.log(data);
+      });
+
+      socket.on('download', (data) => {
+        console.log(data);
+
+        downloadBtn.addEventListener('click', () => {
+          window.open(data);
+        });
+      });
+
+      socket.on('disconnect', () => {
+        console.log('disconnected');
+      });
+
+      socket.io.on('reconnect', (data) => {
+        console.log('reconnected', socket.id, data);
+      });
+
+      downloadBtn.addEventListener('click', () => {
+        socket.emit('messageToServer', {
+          data: {
+            message: 'Hello from client',
+            name: 'Client',
+            action: 'Reset vPOG Download',
+            clientId: socket.id,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
